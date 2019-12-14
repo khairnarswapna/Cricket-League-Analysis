@@ -2,7 +2,7 @@ package cricketiplanalyser;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class BatsMan {
+public class BatsManRunCSV {
     @CsvBindByName(column ="POS")
     private String POS;
 

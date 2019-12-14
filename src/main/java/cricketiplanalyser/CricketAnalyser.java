@@ -11,23 +11,24 @@ import java.util.Iterator;
 
 public class CricketAnalyser {
 
-    public int readCSVData(String csvFilePath) {
-
-        int count=0;
-        try(Reader reader = Files.newBufferedReader(Paths.get(csvFilePath))) {
-            CsvToBean csvToBean = new CsvToBeanBuilder(reader)
-                    .withType(BatsMan.class)
-                    .withIgnoreLeadingWhiteSpace(true)
-                    .build();
-            Iterator<BatsMan> batsmanIterator = csvToBean.iterator();
-            while (batsmanIterator.hasNext()) {
-                BatsMan batsman = batsmanIterator.next();
-                count++;
+    public int loadCSVData(String csvFilePath) throws CricketAnalyserException {
+        try {
+            Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));
+            CsvToBeanBuilder<BatsManRunCSV> csvToBeanBuilder = new CsvToBeanBuilder<>(reader);
+            csvToBeanBuilder.withType(BatsManRunCSV.class);
+            csvToBeanBuilder.withIgnoreLeadingWhiteSpace(true);
+            CsvToBean<BatsManRunCSV> csvToBean = csvToBeanBuilder.build();
+            Iterator<BatsManRunCSV> censusCSVIterator = csvToBean.iterator();;
+            int namOfEateries = 0;
+            while (censusCSVIterator.hasNext()) {
+                namOfEateries++;
+                BatsManRunCSV censusData = censusCSVIterator.next();
             }
+            return namOfEateries;
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new CricketAnalyserException(e.getMessage(),
+                    CricketAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
         }
-        return count;
     }
 
 }
