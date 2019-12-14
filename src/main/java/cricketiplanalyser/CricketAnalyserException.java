@@ -2,7 +2,7 @@ package cricketiplanalyser;
 
 public class CricketAnalyserException extends Exception {
     enum ExceptionType {
-        CENSUS_FILE_PROBLEM
+        CENSUS_FILE_PROBLEM, SOME_FILE_ISSUE
     }
     ExceptionType type;
     public CricketAnalyserException(String message, ExceptionType type) {

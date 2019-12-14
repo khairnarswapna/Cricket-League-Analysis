@@ -12,4 +12,10 @@ repositories {
 
 dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile "com.opencsv:opencsv:4.0"
+    compile 'com.google.code.gson:gson:2.2.+'
+    //compile(files("/home/admin142/Downloads/CensusAnalyser/CensusAnalyser/out/artifacts/CensusAnalyser_jar/CensusAnalyser.jar"))
+    compile(files("/home/admin142/eclipse-workspace/Cricket_IPLAnalyser/src/main/resources/CensusAnalyser.jar"))
+
 }
+

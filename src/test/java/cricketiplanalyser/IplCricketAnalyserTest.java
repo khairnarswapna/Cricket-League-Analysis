@@ -4,6 +4,8 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.rules.ExpectedException;
 
+import java.util.List;
+
 public class IplCricketAnalyserTest {
 
     private static final String IPL2019_RUNS_CSV_FILE_PATH ="./src/test/resources/IPL2019FactsheetMostRuns.csv";
@@ -14,9 +16,8 @@ public class IplCricketAnalyserTest {
     public void givenLeagueMostRunDataCSVFile_ShouldReturnExactCount() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
-            int totalRecord = cricketAnalyser.loadCSVData(IPL2019_RUNS_CSV_FILE_PATH);
-            System.out.println(totalRecord);
-            Assert.assertEquals(101,totalRecord);
+            int countlist = cricketAnalyser.loadCSVData(IPL2019_RUNS_CSV_FILE_PATH);
+            Assert.assertEquals(101,countlist);
         } catch (CricketAnalyserException e) {
             e.printStackTrace();
         }
@@ -53,10 +54,14 @@ public class IplCricketAnalyserTest {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             ExpectedException exceptionRule = ExpectedException.none();
             exceptionRule.expect(CricketAnalyserException.class);
-            cricketAnalyser.loadCSVData(HEADER_MISSING_IPL_MOST_RUN_FILE);
+            cricketAnalyser.loadCSVData(IPL2019_RUNS_CSV_FILE_PATH);
         } catch (CricketAnalyserException e) {
             Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
         }
     }
 
+    @Test
+    public void givenIPlAnalyserData_withLargest_shouldreturn() {
+
+    }
 }
