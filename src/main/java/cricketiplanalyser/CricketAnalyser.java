@@ -1,6 +1,4 @@
 package cricketiplanalyser;
-
-import CSVBuilder.CSVBuilderFactory;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
 
@@ -28,6 +26,8 @@ public class CricketAnalyser {
         } catch (IOException e) {
             throw new CricketAnalyserException(e.getMessage(),
                     CricketAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+        }catch(RuntimeException e){
+            throw new CricketAnalyserException(e.getMessage(),CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE);
         }
     }
 
