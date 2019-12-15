@@ -1,47 +1,53 @@
 package cricketiplanalyser;
-
 import com.opencsv.bean.CsvBindByName;
 
 public class BatsManRunCSV {
-    @CsvBindByName(column ="POS")
-    private String POS;
 
-    @CsvBindByName(column = "PLAYER")
-    private String PLAYER;
-
+    public BatsManRunCSV() {
+    }
+    @CsvBindByName(column = "POS")
+    public int position;
+    @CsvBindByName(column = "PLAYER", required = true)
+    public String playerName;
     @CsvBindByName(column = "Mat", required = true)
-    private String Mat;
-
-    @CsvBindByName(column = "Inns")
-    private String Inns;
-
+    public int match;
+    @CsvBindByName(column = "Inns", required = true)
+    public int innings;
     @CsvBindByName(column = "NO", required = true)
-    private String NO;
-
-    @CsvBindByName(column = "Runs",required = true)
-    private String Runs;
-
+    public int notOut;
+    @CsvBindByName(column = "Runs", required = true)
+    public int runsScored;
     @CsvBindByName(column = "HS", required = true)
-    private String HS;
-
+    public String highestScored;
     @CsvBindByName(column = "Avg", required = true)
-    private String Avg;
+    public double average;
+    @CsvBindByName(column = "BF")
+    public int ballFaced;
+    @CsvBindByName(column = "SR")
+    public double strikeRate;
+    @CsvBindByName(column = "100")
+    public int noOfHundredScored;
+    @CsvBindByName(column = "50")
+    public int noOfFiftyScored;
+    @CsvBindByName(column = "4s")
+    public int noOfFourScored;
+    @CsvBindByName(column = "6s")
+    public int noOfSixesScored;
 
-    @CsvBindByName(column = "BF", required = true)
-    private String BF;
-
-    @CsvBindByName(column = "SR", required = true)
-    private String SR;
-
-    @CsvBindByName(column = "100" ,required = true)
-    private String century;
-
-    @CsvBindByName(column = "50",required = true)
-    private String halfCentury;
-
-    @CsvBindByName(column = "4s", required = true)
-    private String fours;
-
-    @CsvBindByName(column = "6s",required = true)
-    private String sixes;
+    public BatsManRunCSV(BatsManRunCSV batsManRunCSV) {
+        this.position = batsManRunCSV.position;
+        this.playerName = batsManRunCSV.playerName;
+        this.match=batsManRunCSV. match;
+        this.innings= batsManRunCSV.innings;
+        this.notOut =batsManRunCSV.notOut;
+        this.runsScored = batsManRunCSV.runsScored;
+        this.highestScored =batsManRunCSV.highestScored;
+        this.average =batsManRunCSV.average;
+        this.ballFaced = batsManRunCSV.ballFaced;
+        this.strikeRate =batsManRunCSV.strikeRate;
+        this.noOfSixesScored =batsManRunCSV.noOfHundredScored;
+        this.noOfFiftyScored = batsManRunCSV.noOfFiftyScored;
+        this.noOfFourScored = batsManRunCSV.noOfFourScored;
+        this.noOfSixesScored = batsManRunCSV.noOfSixesScored;
+    }
 }
