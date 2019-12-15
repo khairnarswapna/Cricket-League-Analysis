@@ -14,7 +14,7 @@ public class IplCricketAnalyserTest {
     private static final String SAMPLE_IPL_CSV_FILE="./src/test/resources/sampleIPLData.csv";
 
     @Test
-    public void givenLeagueMostRunDataCSVFile_ShouldReturnExactCount() {
+    public void givenIPLAnalyserData_ShouldReturnExactCount() {
         Map<String,BatsManRunCSV> map = null;
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
@@ -26,7 +26,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLAnalyserData_WithWrongFile_ShouldThrowException() {
+    public void givenIPLMostRunsData_WithWrongFile_ShouldThrowException() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             ExpectedException exceptionRule = ExpectedException.none();
@@ -38,7 +38,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLAnalyserData_WithIncorrectDelimiter_ShouldThrowException() {
+    public void givenIPLMostRunsData_WithIncorrectDelimiter_ShouldThrowException() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             ExpectedException exceptionRule = ExpectedException.none();
@@ -50,7 +50,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLAnalyserData_WithIncorrectHeader_ShouldThrowException() {
+    public void givenIPLMostRunsData_WithIncorrectHeader_ShouldThrowException() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             ExpectedException exceptionRule = ExpectedException.none();
