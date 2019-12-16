@@ -76,18 +76,18 @@ public class IplCricketAnalyserTest {
 
    @Test
     public void givenIPLMostRunsData_IfSortedByBattingAverage_ShouldReturn_LowestBattingAverage_Player() {
-        try {
-            CricketAnalyser cricketAnalyser = new CricketAnalyser();
-            cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
-            String sortedResult = cricketAnalyser.sortbyFields(SortByField.AVERAGE);
-            BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
-            Assert.assertEquals("Harpreet Brar", iplRuns[iplRuns.length-1].playerName);
-        } catch ( CricketAnalyserException e) {
-            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
-        }
-    }
-    @Test
+       try {
+           CricketAnalyser cricketAnalyser = new CricketAnalyser();
+           cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
+           String sortedResult = cricketAnalyser.sortbyFields(SortByField.AVERAGE);
+           BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
+           Assert.assertEquals("Harpreet Brar", iplRuns[iplRuns.length - 1].playerName);
+       } catch (CricketAnalyserException e) {
+           Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+       }
+   }
 
+    @Test
     public void givenIPLMostRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_TopStriking_Rate_Player() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
@@ -100,5 +100,20 @@ public class IplCricketAnalyserTest {
         }
 
     }
+
+    @Test
+    public void givenIPLMostRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_LowestStriking_Rate_Player() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
+            String sortedResult = cricketAnalyser.sortbyFields(SortByField.STRIKE_RATE);
+            BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
+            Assert.assertEquals("Bhuvneshwar Kumar", iplRuns[iplRuns.length-1].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+
+    }
+
 }
 
