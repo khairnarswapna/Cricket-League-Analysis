@@ -26,13 +26,13 @@ public class BatsManRunCSV {
     @CsvBindByName(column = "SR")
     public double strikeRate;
     @CsvBindByName(column = "100")
-    public int noOfHundredScored;
+    public int noOfHundred;
     @CsvBindByName(column = "50")
-    public int noOfFiftyScored;
+    public int noOfFifty;
     @CsvBindByName(column = "4s")
-    public int noOfFourScored;
+    public int noOfFours;
     @CsvBindByName(column = "6s")
-    public int noOfSixesScored;
+    public int noOfSixes;
 
     public BatsManRunCSV(BatsManRunCSV batsManRunCSV) {
         this.position = batsManRunCSV.position;
@@ -45,9 +45,10 @@ public class BatsManRunCSV {
         this.average =batsManRunCSV.average;
         this.ballFaced = batsManRunCSV.ballFaced;
         this.strikeRate =batsManRunCSV.strikeRate;
-        this.noOfSixesScored =batsManRunCSV.noOfHundredScored;
-        this.noOfFiftyScored = batsManRunCSV.noOfFiftyScored;
-        this.noOfFourScored = batsManRunCSV.noOfFourScored;
-        this.noOfSixesScored = batsManRunCSV.noOfSixesScored;
+        this.noOfSixes =batsManRunCSV.noOfHundred;
+        this.noOfFifty = batsManRunCSV.noOfFifty;
+        this.noOfFours = batsManRunCSV.noOfFours;
+        this.noOfSixes = batsManRunCSV.noOfSixes;
     }
+
 }
