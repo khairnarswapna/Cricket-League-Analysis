@@ -70,7 +70,20 @@ public class IplCricketAnalyserTest {
             BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
             Assert.assertEquals("MS Dhoni", iplRuns[0].playerName);
         } catch ( CricketAnalyserException e) {
-            e.printStackTrace();
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+    }
+
+   @Test
+    public void givenIPLMostRunsData_IfSortedByBattingAverage_ShouldReturn_LowestBattingAverage_Player() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(SAMPLE_IPL_CSV_FILE);
+            String sortedResult = cricketAnalyser.sortbyFields(SortbyField.Field.AVERAGE);
+            BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
+            Assert.assertEquals("Ishant Sharma", iplRuns[iplRuns.length-1].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
         }
     }
 }
