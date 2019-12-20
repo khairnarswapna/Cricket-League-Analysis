@@ -19,13 +19,15 @@ public class CricketAnalyser {
     public CricketAnalyser() {
             this.iplRunsCsvMap = new HashMap<>();
             this.fieldComparatorMap= new HashMap<>();
-            this.fieldComparatorMap.put(SortByField.AVERAGE, Comparator.comparing(census -> census.average, Comparator.reverseOrder()));
-            this.fieldComparatorMap.put(SortByField.STRIKE_RATE,Comparator.comparing(census -> census.strikeRate, Comparator.reverseOrder()));
+            this.fieldComparatorMap.put(SortByField.AVERAGE, Comparator.comparing(field-> field.average, Comparator.reverseOrder()));
+            this.fieldComparatorMap.put(SortByField.STRIKE_RATE,Comparator.comparing(field-> field.strikeRate, Comparator.reverseOrder()));
             this.fieldComparatorMap.put(SortByField.MAXIMUM_SIX_AND_FOUR,new SortByMaximum4SAnd6s());
-            this.fieldComparatorMap.put(SortByField.STRIKING_WITH_MAXIMUM_SIXS_AND_FOURS, new SortByMaximum4SAnd6s().reversed().thenComparing(compare -> compare.strikeRate));
+            this.fieldComparatorMap.put(SortByField.STRIKING_WITH_MAXIMUM_SIXS_AND_FOURS, new SortByMaximum4SAnd6s().reversed().thenComparing(field -> field.strikeRate));
+            Comparator<BatsManRunCSV> comparator = Comparator.comparing(field -> field.average);
+            this.fieldComparatorMap.put(SortByField.AVERAGE_WITH_STRIKE_RATE, comparator.thenComparing(field-> field.strikeRate).reversed());
+            Comparator<BatsManRunCSV> MaxRunBestAvgComparator= Comparator.comparing(field -> field.runs);
+            this.fieldComparatorMap.put(SortByField.MAXIMUM_RUNS_WITH_BEST_AVERAGE, MaxRunBestAvgComparator.thenComparing(field1-> field1.average).reversed());
 
-            Comparator<BatsManRunCSV> comparator = Comparator.comparing(censusCompare -> censusCompare.average);
-            this.fieldComparatorMap.put(SortByField.AVERAGE_WITH_STRIKE_RATE, comparator.thenComparing(censusCompare -> censusCompare.strikeRate).reversed());
     }
     public<E> Map<String, BatsManRunCSV> loadIPLCSVData(String csvFilePath) throws CricketAnalyserException {
         try ( Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));){

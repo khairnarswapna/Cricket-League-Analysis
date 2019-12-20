@@ -16,7 +16,7 @@ public class BatsManRunCSV {
     @CsvBindByName(column = "NO", required = true)
     public int notOut;
     @CsvBindByName(column = "Runs", required = true)
-    public int runsScored;
+    public int runs;
     @CsvBindByName(column = "HS", required = true)
     public String highestScored;
     @CsvBindByName(column = "Avg", required = true)
@@ -40,7 +40,7 @@ public class BatsManRunCSV {
         this.match=batsManRunCSV. match;
         this.innings= batsManRunCSV.innings;
         this.notOut =batsManRunCSV.notOut;
-        this.runsScored = batsManRunCSV.runsScored;
+        this.runs= batsManRunCSV.runs;
         this.highestScored =batsManRunCSV.highestScored;
         this.average =batsManRunCSV.average;
         this.ballFaced = batsManRunCSV.ballFaced;

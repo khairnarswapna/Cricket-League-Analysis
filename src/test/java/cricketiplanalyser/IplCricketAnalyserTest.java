@@ -171,6 +171,20 @@ public class IplCricketAnalyserTest {
 
     }
 
+    @Test
+    public void givenIPLRunsData_IfSortedMaximumRuns_WithBestAverage_ShouldReturnPlayer() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
+            String sortedResult = cricketAnalyser.sortbyFields(SortByField.MAXIMUM_RUNS_WITH_BEST_AVERAGE);
+            BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
+            Assert.assertEquals("David Warner", iplRuns[0].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+
+    }
+
 
 
 }
