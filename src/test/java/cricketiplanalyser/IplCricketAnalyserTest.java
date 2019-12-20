@@ -143,5 +143,21 @@ public class IplCricketAnalyserTest {
 
     }
 
+    @Test
+    public void givenIPLMostRunsData_IfSortedbestStrikingratewith_4sAnd6s_ShouldReturn_PlayerName() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
+            String sortedResult = cricketAnalyser.sortbyFields(SortByField.STRIKING_WITH_MAXIMUM_SIXS_AND_FOURS);
+            BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
+            Assert.assertEquals("Andre Russell", iplRuns[0].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+
+    }
+
+
+
 }
 

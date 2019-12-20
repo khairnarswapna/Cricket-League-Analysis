@@ -20,6 +20,11 @@ public class CricketAnalyser {
             this.iplRunsCsvMap = new HashMap<>();
             this.fieldComparatorMap= new HashMap<>();
             this.fieldComparatorMap.put(SortByField.AVERAGE, Comparator.comparing(census -> census.average, Comparator.reverseOrder()));
+            this.fieldComparatorMap.put(SortByField.STRIKE_RATE,Comparator.comparing(census -> census.strikeRate, Comparator.reverseOrder()));
+            this.fieldComparatorMap.put(SortByField.MAXIMUM_SIX_AND_FOUR,new SortByMaximum4SAnd6s());
+            this.fieldComparatorMap.put(SortByField.STRIKING_WITH_MAXIMUM_SIXS_AND_FOURS, new SortByMaximum4SAnd6s().reversed().thenComparing(compare -> compare.strikeRate));
+
+            //  Comparator<IPLDAO> comparator = Comparator.comparing(compare -> compare.average);
     }
     public<E> Map<String, BatsManRunCSV> loadIPLCSVData(String csvFilePath) throws CricketAnalyserException {
         try ( Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));){
