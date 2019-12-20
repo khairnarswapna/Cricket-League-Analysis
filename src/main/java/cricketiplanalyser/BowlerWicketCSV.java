@@ -4,8 +4,6 @@ import com.opencsv.bean.CsvBindByName;
 
 public class BowlerWicketCSV {
 
-
-
     @CsvBindByName(column = "POS")
     public int pos;
     @CsvBindByName(column = "PLAYER")
