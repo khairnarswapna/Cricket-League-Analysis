@@ -13,13 +13,16 @@ public class IplCricketAnalyserTest {
     private static final String HEADER_MISSING_IPL_MOST_RUN_FILE="./src/test/resources/HeaderMissingIPL2019MostRun.csv";
     private static final String SAMPLE_IPL_CSV_FILE="./src/test/resources/sampleIPLData.csv";
 
+
+    private static final String IPL2019_WICKET_CSV_FILE_PATH ="./src/test/resources/IPL2019FactsheetMostWkts1.csv";
+
     @Test
     public void givenIPLRunsData_ShouldReturnExactCount() {
-        Map<String, BatsManRunCSV> map = null;
+
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
-            map = cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
-            Assert.assertEquals(100,map.size());
+            int count = cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
+            Assert.assertEquals(100,count);
         } catch (CricketAnalyserException e) {
             e.printStackTrace();
         }
@@ -183,6 +186,21 @@ public class IplCricketAnalyserTest {
             Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
         }
 
+    }
+
+    //bowler
+
+    @Test
+    public void givenIPLWicketData_ShouldReturnExactCount() {
+
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            int playercount = cricketAnalyser.loadWicketCSVData(IPL2019_WICKET_CSV_FILE_PATH);
+            System.out.println(playercount);
+            Assert.assertEquals(99,playercount);
+        } catch (CricketAnalyserException e) {
+            e.printStackTrace();
+        }
     }
 
 

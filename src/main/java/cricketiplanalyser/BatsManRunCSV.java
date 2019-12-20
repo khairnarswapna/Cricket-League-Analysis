@@ -7,19 +7,19 @@ public class BatsManRunCSV {
     }
     @CsvBindByName(column = "POS")
     public int position;
-    @CsvBindByName(column = "PLAYER", required = true)
+    @CsvBindByName(column = "PLAYER")
     public String playerName;
-    @CsvBindByName(column = "Mat", required = true)
+    @CsvBindByName(column = "Mat")
     public int match;
-    @CsvBindByName(column = "Inns", required = true)
+    @CsvBindByName(column = "Inns")
     public int innings;
-    @CsvBindByName(column = "NO", required = true)
+    @CsvBindByName(column = "NO")
     public int notOut;
-    @CsvBindByName(column = "Runs", required = true)
+    @CsvBindByName(column = "Runs")
     public int runs;
-    @CsvBindByName(column = "HS", required = true)
+    @CsvBindByName(column = "HS")
     public String highestScored;
-    @CsvBindByName(column = "Avg", required = true)
+    @CsvBindByName(column = "Avg")
     public double average;
     @CsvBindByName(column = "BF")
     public int ballFaced;
