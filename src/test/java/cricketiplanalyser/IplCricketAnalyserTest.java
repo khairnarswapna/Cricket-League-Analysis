@@ -14,7 +14,7 @@ public class IplCricketAnalyserTest {
     private static final String SAMPLE_IPL_CSV_FILE="./src/test/resources/sampleIPLData.csv";
 
     @Test
-    public void givenIPLAnalyserData_ShouldReturnExactCount() {
+    public void givenIPLRunsData_ShouldReturnExactCount() {
         Map<String, BatsManRunCSV> map = null;
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
@@ -26,7 +26,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_WithWrongFile_ShouldThrowException() {
+    public void givenIPLRunsData_WithWrongFile_ShouldThrowException() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             ExpectedException exceptionRule = ExpectedException.none();
@@ -38,7 +38,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_WithIncorrectDelimiter_ShouldThrowException() {
+    public void givenIPLRunsData_WithIncorrectDelimiter_ShouldThrowException() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             ExpectedException exceptionRule = ExpectedException.none();
@@ -50,7 +50,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_WithIncorrectHeader_ShouldThrowException() {
+    public void givenIPLRunsData_WithIncorrectHeader_ShouldThrowException() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             ExpectedException exceptionRule = ExpectedException.none();
@@ -62,7 +62,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_IfSortedByBattingAverage_ShouldReturn_HighestBattingAverage_Player() {
+    public void givenIPLRunsData_IfSortedByBattingAverage_ShouldReturn_HighestBattingAverage_Player() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
@@ -75,7 +75,7 @@ public class IplCricketAnalyserTest {
     }
 
    @Test
-    public void givenIPLMostRunsData_IfSortedByBattingAverage_ShouldReturn_LowestBattingAverage_Player() {
+    public void givenIPLRunsData_IfSortedByBattingAverage_ShouldReturn_LowestBattingAverage_Player() {
        try {
            CricketAnalyser cricketAnalyser = new CricketAnalyser();
            cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
@@ -88,7 +88,7 @@ public class IplCricketAnalyserTest {
    }
 
     @Test
-    public void givenIPLMostRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_TopStriking_Rate_Player() {
+    public void givenIPLRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_TopStriking_Rate_Player() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
@@ -102,7 +102,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_LowestStriking_Rate_Player() {
+    public void givenIPLRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_LowestStriking_Rate_Player() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
@@ -116,7 +116,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_IfSortedByPlayer_HitMaximum4sAnd6s_ShouldReturn_PlayerName() {
+    public void givenIPLRunsData_IfSortedByPlayer_HitMaximum4sAnd6s_ShouldReturn_PlayerName() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
@@ -130,7 +130,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_IfSortedByPlayer_Hit_Minimum4sAnd6s_ShouldReturn_PlayerName() {
+    public void givenIPLRunsData_IfSortedByPlayer_Hit_Minimum4sAnd6s_ShouldReturn_PlayerName() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
@@ -144,7 +144,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLMostRunsData_IfSortedbestStrikingratewith_4sAnd6s_ShouldReturn_PlayerName() {
+    public void givenIPLRunsData_IfSortedbestStrikingratewith_4sAnd6s_ShouldReturn_PlayerName() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
