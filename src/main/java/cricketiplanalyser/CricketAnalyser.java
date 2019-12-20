@@ -24,7 +24,8 @@ public class CricketAnalyser {
             this.fieldComparatorMap.put(SortByField.MAXIMUM_SIX_AND_FOUR,new SortByMaximum4SAnd6s());
             this.fieldComparatorMap.put(SortByField.STRIKING_WITH_MAXIMUM_SIXS_AND_FOURS, new SortByMaximum4SAnd6s().reversed().thenComparing(compare -> compare.strikeRate));
 
-            //  Comparator<IPLDAO> comparator = Comparator.comparing(compare -> compare.average);
+            Comparator<BatsManRunCSV> comparator = Comparator.comparing(censusCompare -> censusCompare.average);
+            this.fieldComparatorMap.put(SortByField.AVERAGE_WITH_STRIKE_RATE, comparator.thenComparing(censusCompare -> censusCompare.strikeRate).reversed());
     }
     public<E> Map<String, BatsManRunCSV> loadIPLCSVData(String csvFilePath) throws CricketAnalyserException {
         try ( Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));){

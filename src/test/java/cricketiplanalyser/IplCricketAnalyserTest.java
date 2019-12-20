@@ -116,7 +116,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLRunsData_IfSortedByPlayer_HitMaximum4sAnd6s_ShouldReturn_PlayerName() {
+    public void givenIPLRunsData_IfSortedBy_HitMaximum4sAnd6s_ShouldReturn_Player() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
@@ -144,13 +144,27 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLRunsData_IfSortedbestStrikingratewith_4sAnd6s_ShouldReturn_PlayerName() {
+    public void givenIPLRunsData_IfSortedbestStrikingratewith_4sAnd6s_ShouldReturnPlayer() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
             String sortedResult = cricketAnalyser.sortbyFields(SortByField.STRIKING_WITH_MAXIMUM_SIXS_AND_FOURS);
             BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
             Assert.assertEquals("Andre Russell", iplRuns[0].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+
+    }
+
+    @Test
+    public void givenIPLRunsData_IfSortedbestAvergagewith_bestStrikingratewith_ShouldReturnPlayer() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(IPL2019_RUNS_CSV_FILE_PATH);
+            String sortedResult = cricketAnalyser.sortbyFields(SortByField.AVERAGE_WITH_STRIKE_RATE);
+            BatsManRunCSV[] iplRuns = new Gson().fromJson(sortedResult, BatsManRunCSV[].class);
+            Assert.assertEquals("MS Dhoni", iplRuns[0].playerName);
         } catch ( CricketAnalyserException e) {
             Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
         }
