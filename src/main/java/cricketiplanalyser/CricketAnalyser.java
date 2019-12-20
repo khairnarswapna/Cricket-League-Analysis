@@ -28,6 +28,7 @@ public class CricketAnalyser {
             Comparator<IPLDAO> MaxRunBestAvgComparator= Comparator.comparing(field -> field.runs);
             this.fieldComparatorMap.put(SortByField.MAXIMUM_RUNS_WITH_BEST_AVERAGE, MaxRunBestAvgComparator.thenComparing(field1-> field1.average).reversed());
 
+            this.fieldComparatorMap.put(SortByField.TOP_BOWLER_AVERAGE, Comparator.comparing(field -> field.Bowler_Average, Comparator.reverseOrder()));
     }
     public int loadIPLCSVData(String csvFilePath) throws CricketAnalyserException {
         try ( Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));){

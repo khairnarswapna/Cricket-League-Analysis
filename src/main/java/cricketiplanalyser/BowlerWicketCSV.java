@@ -4,6 +4,8 @@ import com.opencsv.bean.CsvBindByName;
 
 public class BowlerWicketCSV {
 
+
+
     @CsvBindByName(column = "POS")
     public int pos;
     @CsvBindByName(column = "PLAYER")
@@ -34,19 +36,19 @@ public class BowlerWicketCSV {
     public BowlerWicketCSV() {
     }
 
-    public BowlerWicketCSV(int pos, String playerName, int match, int innings, double overs, int runs, int wickets, String bbI, double bowler_Average, double bowler_Economy, double bowler_strikeRate, int fourWicket, int fiveWicket) {
-        this.pos = pos;
-        this.playerName = playerName;
-        this.match = match;
-        this.innings = innings;
-        this.overs = overs;
-        this.runs = runs;
-        this.wickets = wickets;
-        this.bbI = bbI;
-        this.Bowler_Average = bowler_Average;
-        this.Bowler_Economy = bowler_Economy;
-        this.Bowler_strikeRate = bowler_strikeRate;
-        this.fourWicket = fourWicket;
-        this.fiveWicket = fiveWicket;
+    public BowlerWicketCSV(BowlerWicketCSV bowlerWicketCSV) {
+        this.pos = bowlerWicketCSV.pos;
+        this.playerName = bowlerWicketCSV.playerName;
+        this.match =bowlerWicketCSV.match;
+        this.innings =bowlerWicketCSV.innings;
+        this.overs =bowlerWicketCSV.overs;
+        this.runs = bowlerWicketCSV.runs;
+        this.wickets =bowlerWicketCSV.wickets;
+        this.bbI =bowlerWicketCSV.bbI;
+        this.Bowler_Average =bowlerWicketCSV.Bowler_Average;
+        this.Bowler_Economy =bowlerWicketCSV.Bowler_Economy;
+        this.Bowler_strikeRate =bowlerWicketCSV.Bowler_strikeRate;
+        this.fourWicket =bowlerWicketCSV.fourWicket;
+        this.fiveWicket =bowlerWicketCSV.fiveWicket;
     }
 }

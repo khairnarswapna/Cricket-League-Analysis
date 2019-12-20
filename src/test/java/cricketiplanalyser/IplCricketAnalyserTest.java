@@ -12,9 +12,7 @@ public class IplCricketAnalyserTest {
     private static final String DELIMETER_MISSING_IPL_MOST_RUN_FILE="./src/test/resources/delimeterMissingIPL2019MostRuns.csv";
     private static final String HEADER_MISSING_IPL_MOST_RUN_FILE="./src/test/resources/HeaderMissingIPL2019MostRun.csv";
     private static final String SAMPLE_IPL_CSV_FILE="./src/test/resources/sampleIPLData.csv";
-
-
-    private static final String IPL2019_WICKET_CSV_FILE_PATH ="./src/test/resources/IPL2019FactsheetMostWkts1.csv";
+    private static final String IPL2019_WICKET_CSV_FILE_PATH ="./src/test/resources/IPL2019FactsheetMostWkts.csv";
 
     @Test
     public void givenIPLRunsData_ShouldReturnExactCount() {
@@ -202,6 +200,21 @@ public class IplCricketAnalyserTest {
             e.printStackTrace();
         }
     }
+
+    @Test
+    public void givenIPLWicketData_IfSortedByBowlingAverage_ShouldReturn_TopBowlingAverage_Player() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadWicketCSVData(IPL2019_WICKET_CSV_FILE_PATH);
+            String sortedResult = cricketAnalyser.sortbyFields(SortByField.TOP_BOWLER_AVERAGE);
+            BowlerWicketCSV[] iplwicket = new Gson().fromJson(sortedResult, BowlerWicketCSV[].class);
+            Assert.assertEquals("Krishnappa Gowtham", iplwicket[0].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+    }
+
+
 
 
 
