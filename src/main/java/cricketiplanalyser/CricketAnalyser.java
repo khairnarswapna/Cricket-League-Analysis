@@ -1,17 +1,8 @@
 package cricketiplanalyser;
-import CSVBuilder.CSVBuilderException;
-import CSVBuilder.CSVBuilderFactory;
-import CSVBuilder.ICSVBuilder;
-import censusanalyser.CensusAnalyserException;
 import com.google.gson.Gson;
 
-import java.io.IOException;
-import java.io.Reader;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.util.stream.StreamSupport;
 
 public class CricketAnalyser {
 
@@ -37,15 +28,16 @@ public class CricketAnalyser {
     }
 
     public int loadIPLCSVData(String csvFilePath,PlayerType playerType) throws CricketAnalyserException {
-        IPLAdapter iplAdapter = IPLAdapterFactory.getCreateIPLAdapter(playerType);
+        IPLAdapter iplAdapter = IPLAdapterFactory.getIPLPlayer(playerType);
         iplCsvMap= iplAdapter.loadIPLCSVData(csvFilePath);
         return iplCsvMap.size();
     }
     public String sortByFields(SortByField fields) throws CricketAnalyserException {
         if (iplCsvMap == null || iplCsvMap.size() == 0)
         {
-            throw new CricketAnalyserException("No Census Data", CricketAnalyserException.ExceptionType.NO_CENSUS_DATA);
+            throw new CricketAnalyserException("No IPl Data", CricketAnalyserException.ExceptionType.NO_IPL_DATA);
         }
+
         ArrayList list =this.iplCsvMap.values().stream()
                 .sorted(fieldComparatorMap.get(fields))
                 .collect(Collectors.toCollection(ArrayList::new));
