@@ -14,6 +14,8 @@ public class IPLDAO {
     public double Bowler_Economy;
     public int wickets;
     public double overs;
+    public int fourWicket;
+    public int fiveWicket;
 
     public IPLDAO() {
     }
@@ -35,6 +37,9 @@ public class IPLDAO {
         Bowler_Economy=bowlerWicketCSV.Bowler_Economy;
         wickets=bowlerWicketCSV.wickets;
         overs=bowlerWicketCSV.overs;
+        fourWicket=bowlerWicketCSV.fourWicket;
+        fiveWicket=bowlerWicketCSV.fiveWicket;
+
     }
 
 

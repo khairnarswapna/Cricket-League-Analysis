@@ -24,7 +24,8 @@ public class CricketAnalyser {
             fieldComparatorMap.put(SortByField.MAXIMUM_RUNS_WITH_BEST_AVERAGE, MaxRunBestAvgComparator.thenComparing(field1-> field1.average).reversed());
             fieldComparatorMap.put(SortByField.TOP_BOWLER_AVERAGE, Comparator.comparing(field -> field.Bowler_Average, Comparator.reverseOrder()));
             fieldComparatorMap.put(SortByField.TOP_BOWLERS_STRIK_RATE, Comparator.comparing(field -> field.Bowler_strikeRate, Comparator.reverseOrder()));
-            fieldComparatorMap.put(SortByField.BEST_ECOMONY,Comparator.comparing(field->field.Bowler_Economy,Comparator.reverseOrder()));
+            fieldComparatorMap.put(SortByField.BEST_ECOMONY,Comparator.comparing(field->field.Bowler_Economy));
+            fieldComparatorMap.put(SortByField.BEST_STRIKING_RATE_WITH_5W_AND_4W,new SortByMaximum4wAnd5w().thenComparing(field -> field.Bowler_strikeRate).reversed());
     }
 
     public int loadIPLCSVData(String csvFilePath,PlayerType playerType) throws CricketAnalyserException {

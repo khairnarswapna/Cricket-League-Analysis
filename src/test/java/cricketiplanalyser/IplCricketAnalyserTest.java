@@ -200,7 +200,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLWicketData_IfSortedByBowlingAverage_ShouldReturn_TopBowlingAverage_Player() {
+    public void givenIPLWicketData_IfSortedByBowlingAverage_ShouldReturn_BowlingAverage_Player() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_WICKET_CSV_FILE_PATH,CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS);
@@ -212,6 +212,7 @@ public class IplCricketAnalyserTest {
         }
     }
 
+
     @Test
     public void givenIPLWicketData_IfSortedByEconomy_ShouldReturn_BestEcomony_Player() {
         try {
@@ -219,20 +220,20 @@ public class IplCricketAnalyserTest {
             cricketAnalyser.loadIPLCSVData(IPL2019_WICKET_CSV_FILE_PATH,CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS);
             String sortedResult = cricketAnalyser.sortByFields(SortByField.BEST_ECOMONY);
             BowlerWicketCSV[] iplwicket = new Gson().fromJson(sortedResult, BowlerWicketCSV[].class);
-            Assert.assertEquals("Ben Cutting", iplwicket[0].playerName);
+            Assert.assertEquals("Shivam Dube", iplwicket[0].playerName);
         } catch ( CricketAnalyserException e) {
             Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
         }
     }
 
     @Test
-    public void givenIPLWicketData_IfSortedByBowlingStrikingRates_ShouldReturn_TopStriking_Player() {
+    public void givenIPLWicketData_IfSortedByBestStriking_Rate_with_5w_and_5w_ShouldReturn_TopStriking_Player() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_WICKET_CSV_FILE_PATH,CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS);
-            String sortedResult = cricketAnalyser.sortByFields(SortByField.TOP_BOWLERS_STRIK_RATE);
+            String sortedResult = cricketAnalyser.sortByFields(SortByField.BEST_STRIKING_RATE_WITH_5W_AND_4W);
             BowlerWicketCSV[] iplwicket = new Gson().fromJson(sortedResult, BowlerWicketCSV[].class);
-            Assert.assertEquals("Krishnappa Gowtham", iplwicket[0].playerName);
+            Assert.assertEquals("Lasith Malinga", iplwicket[0].playerName);
         } catch ( CricketAnalyserException e) {
             Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
         }
