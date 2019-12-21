@@ -16,9 +16,8 @@ import java.util.stream.StreamSupport;
 public class CricketAnalyser {
 
 
-    public enum PlayerType{IPL_BATSMAN_RUNS, IPL_BOWLER_WICKETS}
+    public enum PlayerType{ IPL_BATSMAN_RUNS, IPL_BOWLER_WICKETS }
 
-    //private PlayerType PlayerType;
     Map<String, IPLDAO> iplCsvMap = new HashMap<>();
     Map<SortByField, Comparator<IPLDAO>> fieldComparatorMap= null;
     public CricketAnalyser() {
@@ -34,6 +33,7 @@ public class CricketAnalyser {
             fieldComparatorMap.put(SortByField.MAXIMUM_RUNS_WITH_BEST_AVERAGE, MaxRunBestAvgComparator.thenComparing(field1-> field1.average).reversed());
             fieldComparatorMap.put(SortByField.TOP_BOWLER_AVERAGE, Comparator.comparing(field -> field.Bowler_Average, Comparator.reverseOrder()));
             fieldComparatorMap.put(SortByField.TOP_BOWLERS_STRIK_RATE, Comparator.comparing(field -> field.Bowler_strikeRate, Comparator.reverseOrder()));
+            fieldComparatorMap.put(SortByField.BEST_ECOMONY,Comparator.comparing(field->field.Bowler_Economy,Comparator.reverseOrder()));
     }
 
     public int loadIPLCSVData(String csvFilePath,PlayerType playerType) throws CricketAnalyserException {
@@ -41,7 +41,7 @@ public class CricketAnalyser {
         iplCsvMap= iplAdapter.loadIPLCSVData(csvFilePath);
         return iplCsvMap.size();
     }
-    public String sortbyFields(SortByField fields) throws CricketAnalyserException {
+    public String sortByFields(SortByField fields) throws CricketAnalyserException {
         if (iplCsvMap == null || iplCsvMap.size() == 0)
         {
             throw new CricketAnalyserException("No Census Data", CricketAnalyserException.ExceptionType.NO_CENSUS_DATA);
