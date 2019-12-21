@@ -18,7 +18,7 @@ public class CricketAnalyser {
 
     public enum PlayerType{IPL_BATSMAN_RUNS, IPL_BOWLER_WICKETS}
 
-    private PlayerType PlayerType;
+    //private PlayerType PlayerType;
     Map<String, IPLDAO> iplCsvMap = new HashMap<>();
     Map<SortByField, Comparator<IPLDAO>> fieldComparatorMap= null;
     public CricketAnalyser() {
@@ -33,10 +33,11 @@ public class CricketAnalyser {
             Comparator<IPLDAO> MaxRunBestAvgComparator= Comparator.comparing(field -> field.runs);
             fieldComparatorMap.put(SortByField.MAXIMUM_RUNS_WITH_BEST_AVERAGE, MaxRunBestAvgComparator.thenComparing(field1-> field1.average).reversed());
             fieldComparatorMap.put(SortByField.TOP_BOWLER_AVERAGE, Comparator.comparing(field -> field.Bowler_Average, Comparator.reverseOrder()));
+            fieldComparatorMap.put(SortByField.TOP_BOWLERS_STRIK_RATE, Comparator.comparing(field -> field.Bowler_strikeRate, Comparator.reverseOrder()));
     }
 
-    public int loadIPLCSVData(String csvFilePath,PlayerType playertype) throws CricketAnalyserException {
-        IPLAdapter iplAdapter = IPLAdapterFactory.getCreateIPLAdapter(playertype);
+    public int loadIPLCSVData(String csvFilePath,PlayerType playerType) throws CricketAnalyserException {
+        IPLAdapter iplAdapter = IPLAdapterFactory.getCreateIPLAdapter(playerType);
         iplCsvMap= iplAdapter.loadIPLCSVData(csvFilePath);
         return iplCsvMap.size();
     }

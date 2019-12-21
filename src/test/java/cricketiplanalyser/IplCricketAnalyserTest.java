@@ -212,5 +212,18 @@ public class IplCricketAnalyserTest {
         }
     }
 
+    @Test
+    public void givenIPLWicketData_IfSortedByBowlingStrikingRates_ShouldReturn_TopStriking_Player() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(IPL2019_WICKET_CSV_FILE_PATH,CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS);
+            String sortedResult = cricketAnalyser.sortbyFields(SortByField.TOP_BOWLERS_STRIK_RATE);
+            BowlerWicketCSV[] iplwicket = new Gson().fromJson(sortedResult, BowlerWicketCSV[].class);
+            Assert.assertEquals("Krishnappa Gowtham", iplwicket[0].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+    }
+
 }
 
