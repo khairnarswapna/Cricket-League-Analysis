@@ -280,7 +280,7 @@ public class IplCricketAnalyserTest {
     }
 
     @Test
-    public void givenIPLWicketData_IfSortedByMinimumWicketWithbestBowlingAverage_shouldReturnRecord() {
+    public void givenIPLWicketData_IfSortedByMinimumWicketWithBestBowlingAverage_shouldReturnRecord() {
         try {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.loadIPLCSVData(IPL2019_WICKET_CSV_FILE_PATH,CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS);
