@@ -266,6 +266,34 @@ public class IplCricketAnalyserTest {
     }
 
 
+    @Test
+    public void givenIPLWicketData_IfSortedByMaximumWicketWithbestBowlingAverage_shouldReturnRecord() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(IPL2019_WICKET_CSV_FILE_PATH,CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS);
+            String sortedResult = cricketAnalyser.sortByFields(SortByField.MAXIMUM_WICKETS_WITH_BEST_AVERAGE_RATE);
+            BowlerWicketCSV[] iplwicket = new Gson().fromJson(sortedResult, BowlerWicketCSV[].class);
+            Assert.assertEquals("Imran Tahir", iplwicket[0].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+    }
+
+    @Test
+    public void givenIPLWicketData_IfSortedByMinimumWicketWithbestBowlingAverage_shouldReturnRecord() {
+        try {
+            CricketAnalyser cricketAnalyser = new CricketAnalyser();
+            cricketAnalyser.loadIPLCSVData(IPL2019_WICKET_CSV_FILE_PATH,CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS);
+            String sortedResult = cricketAnalyser.sortByFields(SortByField.MAXIMUM_WICKETS_WITH_BEST_AVERAGE_RATE);
+            BowlerWicketCSV[] iplwicket = new Gson().fromJson(sortedResult, BowlerWicketCSV[].class);
+            Assert.assertEquals("Yusuf Pathan", iplwicket[iplwicket.length-1].playerName);
+        } catch ( CricketAnalyserException e) {
+            Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
+        }
+    }
+
+
+
 
 
 }
