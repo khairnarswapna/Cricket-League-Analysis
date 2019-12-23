@@ -16,11 +16,16 @@ import java.util.stream.StreamSupport;
 
 public abstract class IPLAdapter {
 
-    public abstract Map<String, IPLDAO> loadIPLCSVData (String csvFilePath) throws CricketAnalyserException;
+    Map<String, IPLDAO> iplCSVMap ;
 
-    protected <E> Map<String, IPLDAO> loadIPLCSVData(Class<E> iplClass, String filePath) throws CricketAnalyserException {
+    public IPLAdapter() {
+        this.iplCSVMap = new HashMap<>();
+    }
 
-        Map<String, IPLDAO> iplCSVMap = new HashMap<>();
+    public abstract Map<String, IPLDAO> loadIPLCSVData (CricketAnalyser.PlayerType playerType , String ... csvFilePath) throws CricketAnalyserException;
+
+    protected <E> Map<String, IPLDAO> loadIPLCSVData(Class<E> iplClass , String filePath) throws CricketAnalyserException {
+
         try (Reader reader = Files.newBufferedReader(Paths.get(filePath))) {
             ICSVBuilder csvBuilder = CSVBuilderFactory.createCSVbuilder();
             Iterator<E> censusCSVIterator = csvBuilder.getCSVFileItrator(reader,iplClass);
