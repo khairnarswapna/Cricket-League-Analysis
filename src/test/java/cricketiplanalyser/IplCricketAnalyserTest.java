@@ -322,6 +322,7 @@ public class IplCricketAnalyserTest {
             Assert.assertEquals("Hardik Pandya",iplwicket[0].playerName);
 
         } catch (CricketAnalyserException e) {
+
             Assert.assertEquals(CricketAnalyserException.ExceptionType.SOME_FILE_ISSUE, e.type);
         }
     }
