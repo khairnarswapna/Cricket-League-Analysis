@@ -12,6 +12,8 @@ public class CricketAnalyser {
     Map<SortByField, Comparator<IPLDAO>> fieldComparatorMap = null;
     Map<String, IPLDAO> allRounderMap = null;
 
+    private IPLAdapter iplAdapter;
+
     public CricketAnalyser() {
 
         iplCsvMap = new HashMap<>();
@@ -40,6 +42,9 @@ public class CricketAnalyser {
 
 
     }
+   /* public void setIplAdapter(IPLAdapter iplAdapter){
+        this.iplAdapter=iplAdapter;
+    }*/
 
     public int loadIPLCSVData(PlayerType playerType,String... csvFilePath) throws CricketAnalyserException {
         IPLAdapter iplAdapter = IPLAdapterFactory.getIPLPlayer(playerType);
