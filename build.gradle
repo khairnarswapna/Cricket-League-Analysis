@@ -15,7 +15,10 @@ dependencies {
     compile "com.opencsv:opencsv:4.0"
     compile 'com.google.code.gson:gson:2.2.+'
     //compile(files("/home/admin142/Downloads/CensusAnalyser/CensusAnalyser/out/artifacts/CensusAnalyser_jar/CensusAnalyser.jar"))
-    compile(files("/home/admin142/eclipse-workspace/Cricket_IPLAnalyser/src/main/resources/CensusAnalyser.jar"))
+    compile(files("/home/user/IdeaProjects/Cricket-League-Analysis/src/main/resources/CensusAnalyser.jar"))
+    // https://mvnrepository.com/artifact/org.mockito/mockito-core
+    testCompile group: 'org.mockito', name: 'mockito-core', version: '3.1.0'
+
 
 }
 

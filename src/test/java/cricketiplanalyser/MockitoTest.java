@@ -8,9 +8,9 @@ import org.mockito.junit.MockitoRule;
 
 import java.util.HashMap;
 
-
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
+
 
 public class MockitoTest {
 
@@ -31,11 +31,12 @@ public class MockitoTest {
 
     @Test
     public void GivenIPLRunsData_WhenCorrect_ShouldReturnRecord() {
-        IPLAdapter iplAdapter = mock(IPLAdapterFactory.getIPLPlayer(CricketAnalyser.PlayerType.IPL_BATSMAN_RUNS).getClass());
+        CricketAnalyser cricketAnalyser=new CricketAnalyser();
+        IPLAdapter iplAdapter = mock( cricketAnalyser.getAdapterObject(CricketAnalyser.PlayerType.IPL_BATSMAN_RUNS).getClass());
         try {
             create();
             when(iplAdapter.loadIPLCSVData(CricketAnalyser.PlayerType.IPL_BATSMAN_RUNS,IPL_RUN_CSV_FILE)).thenReturn(this.map);
-            CricketAnalyser cricketAnalyser=new CricketAnalyser();
+           // CricketAnalyser cricketAnalyser=new CricketAnalyser();
             cricketAnalyser.setIplAdapter(iplAdapter);
             int size=cricketAnalyser.loadIPLCSVData(CricketAnalyser.PlayerType.IPL_BATSMAN_RUNS,IPL_RUN_CSV_FILE);
             Assert.assertEquals(4,size);
@@ -47,11 +48,11 @@ public class MockitoTest {
 
     @Test
     public void GivenIPLwicketData_WhenCorrect_ShouldReturnRecord() {
-        IPLAdapter iplAdapter = mock(IPLAdapterFactory.getIPLPlayer(CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS).getClass());
+        CricketAnalyser cricketAnalyser=new CricketAnalyser();
+        IPLAdapter iplAdapter = mock( cricketAnalyser.getAdapterObject(CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS).getClass());
         try {
             create();
             when(iplAdapter.loadIPLCSVData(CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS,IPL_WICKET_CSV_FILE)).thenReturn(this.map);
-            CricketAnalyser cricketAnalyser=new CricketAnalyser();
             cricketAnalyser.setIplAdapter(iplAdapter);
             int size = cricketAnalyser.loadIPLCSVData(CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS,IPL_WICKET_CSV_FILE);
             Assert.assertEquals(4,size);
@@ -59,4 +60,22 @@ public class MockitoTest {
             e.printStackTrace();
         }
     }
+
+
+
+
+   /* @Test
+    public void GivenIPLRunsData_WhenCorrect_ShouldReturnExactSize() {
+        IPLAnalyser iplAnalyser = new IPLAnalyser();
+        IPLAdapter iplAdapter = mock(iplAnalyser.getAdapterObject(IPLAnalyser.Innings.BATTING).getClass());
+        try {
+            create();
+            when(iplAdapter.loadIPLData(IPLAnalyser.Innings.BATTING,IPL_CSV_FILE)).thenReturn(this.map);
+            iplAnalyser.setIPLAdapter(iplAdapter);
+            int size = iplAnalyser.loadIPLData(IPLAnalyser.Innings.BATTING, IPL_CSV_FILE);
+            Assert.assertEquals(3,size);
+        } catch (IPLAnalyserException e) {
+            e.printStackTrace();
+        }
+    }*/
 }

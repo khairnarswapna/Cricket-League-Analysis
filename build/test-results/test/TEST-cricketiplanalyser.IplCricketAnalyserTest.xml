@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="cricketiplanalyser.IplCricketAnalyserTest" tests="23" skipped="0" failures="3" errors="0" timestamp="2019-12-24T12:32:43" hostname="FH400" time="8.803">
+  <properties/>
+  <testcase name="givenIPLWicketData_ShouldReturnExactCount" classname="cricketiplanalyser.IplCricketAnalyserTest" time="1.398"/>
+  <testcase name="givenIPLRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_LowestStriking_Rate_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.592"/>
+  <testcase name="givenIPLWicketData_IfSortedByBestStriking_Rate_with_5w_and_5w_ShouldReturn_TopStriking_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.38"/>
+  <testcase name="givenIPLRunsData_IfSortedbestStrikingratewith_4sAnd6s_ShouldReturnPlayer" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.423"/>
+  <testcase name="givenIPLRunsData_IfSortedByBattingAverage_ShouldReturn_HighestBattingAverage_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.388"/>
+  <testcase name="givenIPLRunsData_IfSortedByBattingWStrike_Rate_ShouldReturn_TopStriking_Rate_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.381"/>
+  <testcase name="givenIPLRunsData_IfSortedBy_HitMaximum4sAnd6s_ShouldReturn_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.378"/>
+  <testcase name="givenIPLWicketData_IfSortedByEconomy_ShouldReturn_BestEcomony_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.439"/>
+  <testcase name="givenIPLRunsData_IfSortedbestAvergagewith_bestStrikingratewith_ShouldReturnPlayer" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.306"/>
+  <testcase name="givenIPLWicketData_IfSortedByMaximumWicketWithbestBowlingAverage_shouldReturnRecord" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.353"/>
+  <testcase name="givenIPLWicketData_IfSortedByBestBowlingAverageWithStrikeRate_shouldReturn_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.29"/>
+  <testcase name="givenIPLRunsData_ShouldReturnExactCount" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.349"/>
+  <testcase name="givenIPLWicketData_IfSortedByBowlingAverageWithStrikeRate_shouldReturn_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.283"/>
+  <testcase name="givenIPLWicketData_IfSortedByMinimumWicketWithBestBowlingAverage_shouldReturnRecord" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.298"/>
+  <testcase name="givenIPLRunsData_WithIncorrectHeader_ShouldThrowException" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.008">
+    <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
+	at cricketiplanalyser.CricketAnalyser.loadIPLCSVData(CricketAnalyser.java:49)
+	at cricketiplanalyser.IplCricketAnalyserTest.givenIPLRunsData_WithIncorrectHeader_ShouldThrowException(IplCricketAnalyserTest.java:65)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</failure>
+  </testcase>
+  <testcase name="givenIPLRunsData_WithWrongFile_ShouldThrowException" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.01">
+    <failure message="java.lang.AssertionError: expected:&lt;CENSUS_FILE_PROBLEM&gt; but was:&lt;FILE_NOT_FOUND&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;CENSUS_FILE_PROBLEM&gt; but was:&lt;FILE_NOT_FOUND&gt;
+	at org.junit.Assert.fail(Assert.java:88)
+	at org.junit.Assert.failNotEquals(Assert.java:834)
+	at org.junit.Assert.assertEquals(Assert.java:118)
+	at org.junit.Assert.assertEquals(Assert.java:144)
+	at cricketiplanalyser.IplCricketAnalyserTest.givenIPLRunsData_WithWrongFile_ShouldThrowException(IplCricketAnalyserTest.java:42)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+</failure>
+  </testcase>
+  <testcase name="givenIPLRunsData_IfSortedByPlayer_Hit_Minimum4sAnd6s_ShouldReturn_PlayerName" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.398"/>
+  <testcase name="givenCsvdata_IfSortedByBestBattingAndBollwingAverage_ShouldReturnRecord" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.546"/>
+  <testcase name="givenIPLRunsData_IfSortedMaximumRuns_WithBestAverage_ShouldReturnPlayer" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.279"/>
+  <testcase name="givenCsvdata_IfSortedofAllRounder_ShouldReturnRecord" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.535"/>
+  <testcase name="givenIPLWicketData_IfSortedByBowlingAverage_ShouldReturn_BowlingAverage_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.372"/>
+  <testcase name="givenIPLRunsData_IfSortedByBattingAverage_ShouldReturn_LowestBattingAverage_Player" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.31"/>
+  <testcase name="givenIPLRunsData_WithIncorrectDelimiter_ShouldThrowException" classname="cricketiplanalyser.IplCricketAnalyserTest" time="0.039">
+    <failure message="java.lang.RuntimeException: com.opencsv.exceptions.CsvDataTypeMismatchException: Conversion of 143.86 1 8 57 21 to double failed." type="java.lang.RuntimeException">java.lang.RuntimeException: com.opencsv.exceptions.CsvDataTypeMismatchException: Conversion of 143.86 1 8 57 21 to double failed.
+	at com.opencsv.bean.concurrent.ProcessCsvLine.run(ProcessCsvLine.java:91)
+	at com.opencsv.bean.CsvToBean$CsvToBeanIterator.readLineWithPossibleError(CsvToBean.java:523)
+	at com.opencsv.bean.CsvToBean$CsvToBeanIterator.readSingleLine(CsvToBean.java:543)
+	at com.opencsv.bean.CsvToBean$CsvToBeanIterator.&lt;init&gt;(CsvToBean.java:500)
+	at com.opencsv.bean.CsvToBean.iterator(CsvToBean.java:488)
+	at CSVBuilder.OpenCSVBuilder.getCSVFileItrator(OpenCSVBuilder.java:14)
+	at cricketiplanalyser.IPLAdapter.loadIPLCSVData(IPLAdapter.java:31)
+	at cricketiplanalyser.BatsManRunsAdapter.loadIPLCSVData(BatsManRunsAdapter.java:21)
+	at cricketiplanalyser.CricketAnalyser.loadIPLCSVData(CricketAnalyser.java:49)
+	at cricketiplanalyser.IplCricketAnalyserTest.givenIPLRunsData_WithIncorrectDelimiter_ShouldThrowException(IplCricketAnalyserTest.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:50)
+	at org.junit.internal.runners.model.ReflectiveCallable.run(ReflectiveCallable.java:12)
+	at org.junit.runners.model.FrameworkMethod.invokeExplosively(FrameworkMethod.java:47)
+	at org.junit.internal.runners.statements.InvokeMethod.evaluate(InvokeMethod.java:17)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.runTestClass(JUnitTestClassExecutor.java:110)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:58)
+	at org.gradle.api.internal.tasks.testing.junit.JUnitTestClassExecutor.execute(JUnitTestClassExecutor.java:38)
+	at org.gradle.api.internal.tasks.testing.junit.AbstractJUnitTestClassProcessor.processTestClass(AbstractJUnitTestClassProcessor.java:62)
+	at org.gradle.api.internal.tasks.testing.SuiteTestClassProcessor.processTestClass(SuiteTestClassProcessor.java:51)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.dispatch.ContextClassLoaderDispatch.dispatch(ContextClassLoaderDispatch.java:32)
+	at org.gradle.internal.dispatch.ProxyDispatchAdapter$DispatchingInvocationHandler.invoke(ProxyDispatchAdapter.java:93)
+	at com.sun.proxy.$Proxy2.processTestClass(Unknown Source)
+	at org.gradle.api.internal.tasks.testing.worker.TestWorker.processTestClass(TestWorker.java:118)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:566)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:35)
+	at org.gradle.internal.dispatch.ReflectionDispatch.dispatch(ReflectionDispatch.java:24)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:175)
+	at org.gradle.internal.remote.internal.hub.MessageHubBackedObjectConnection$DispatchWrapper.dispatch(MessageHubBackedObjectConnection.java:157)
+	at org.gradle.internal.remote.internal.hub.MessageHub$Handler.run(MessageHub.java:404)
+	at org.gradle.internal.concurrent.ExecutorPolicy$CatchAndRecordFailures.onExecute(ExecutorPolicy.java:63)
+	at org.gradle.internal.concurrent.ManagedExecutorImpl$1.run(ManagedExecutorImpl.java:46)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:628)
+	at org.gradle.internal.concurrent.ThreadFactoryImpl$ManagedThreadRunnable.run(ThreadFactoryImpl.java:55)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: com.opencsv.exceptions.CsvDataTypeMismatchException: Conversion of 143.86 1 8 57 21 to double failed.
+	at com.opencsv.bean.BeanFieldPrimitiveTypes.convert(BeanFieldPrimitiveTypes.java:71)
+	at com.opencsv.bean.AbstractBeanField.setFieldValue(AbstractBeanField.java:132)
+	at com.opencsv.bean.concurrent.ProcessCsvLine.processField(ProcessCsvLine.java:140)
+	at com.opencsv.bean.concurrent.ProcessCsvLine.processLine(ProcessCsvLine.java:126)
+	at com.opencsv.bean.concurrent.ProcessCsvLine.run(ProcessCsvLine.java:82)
+	... 56 more
+Caused by: org.apache.commons.beanutils.ConversionException: Error converting from 'String' to 'Double' For input string: &quot;143.86 1 8 57 21&quot;
+	at org.apache.commons.beanutils.converters.AbstractConverter.handleError(AbstractConverter.java:282)
+	at org.apache.commons.beanutils.converters.AbstractConverter.convert(AbstractConverter.java:177)
+	at org.apache.commons.beanutils.converters.ConverterFacade.convert(ConverterFacade.java:61)
+	at org.apache.commons.beanutils.ConvertUtilsBean.convert(ConvertUtilsBean.java:491)
+	at com.opencsv.bean.BeanFieldPrimitiveTypes.convert(BeanFieldPrimitiveTypes.java:63)
+	... 60 more
+Caused by: java.lang.NumberFormatException: For input string: &quot;143.86 1 8 57 21&quot;
+	at java.base/jdk.internal.math.FloatingDecimal.readJavaFormatString(FloatingDecimal.java:2054)
+	at java.base/jdk.internal.math.FloatingDecimal.parseDouble(FloatingDecimal.java:110)
+	at java.base/java.lang.Double.parseDouble(Double.java:543)
+	at java.base/java.lang.Double.&lt;init&gt;(Double.java:625)
+	at org.apache.commons.beanutils.converters.NumberConverter.toNumber(NumberConverter.java:448)
+	at org.apache.commons.beanutils.converters.NumberConverter.convertToType(NumberConverter.java:271)
+	at org.apache.commons.beanutils.converters.AbstractConverter.convert(AbstractConverter.java:169)
+	... 63 more
+</failure>
+  </testcase>
+  <system-out><![CDATA[99
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

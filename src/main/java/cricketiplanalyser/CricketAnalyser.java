@@ -61,5 +61,9 @@ public class CricketAnalyser {
         String sortIplCsvToJson = new Gson().toJson(list);
         return sortIplCsvToJson;
     }
+
+    public static IPLAdapter getAdapterObject(PlayerType playerType) {
+        return IPLAdapterFactory.getIPLPlayer(playerType);
+    }
 }
 
