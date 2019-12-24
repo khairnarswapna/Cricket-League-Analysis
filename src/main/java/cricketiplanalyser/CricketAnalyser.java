@@ -34,7 +34,7 @@ public class CricketAnalyser {
         Comparator<IPLDAO> BestBowlingAvgWithStrikeRate = Comparator.comparing(compare -> compare.Bowler_Average);
         fieldComparatorMap.put(SortByField.BEST_BOWLING_AVERAGE_WITH_STRIKE_RATE, BestBowlingAvgWithStrikeRate.thenComparing(field -> field.Bowler_strikeRate));
         fieldComparatorMap.put(SortByField.TOP_BOWLERS_STRIK_RATE, Comparator.comparing(field -> field.Bowler_strikeRate, Comparator.reverseOrder()));
-        fieldComparatorMap.put(SortByField.BEST_ECOMONY, Comparator.comparing(field -> field.Bowler_Economy));
+        fieldComparatorMap.put(SortByField.BEST_ECOMONY_RATE, Comparator.comparing(field -> field.Bowler_Economy));
         fieldComparatorMap.put(SortByField.BEST_STRIKING_RATE_WITH_5W_AND_4W, new SortByMaximum4wAnd5w().thenComparing(field -> field.Bowler_strikeRate).reversed());
 
         Comparator<IPLDAO> MaximumWicketWithAverage = Comparator.comparing(field -> field.wickets, Comparator.reverseOrder());

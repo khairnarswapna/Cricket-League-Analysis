@@ -237,7 +237,7 @@ public class IplCricketAnalyserTest {
             CricketAnalyser cricketAnalyser = new CricketAnalyser();
             cricketAnalyser.setIplAdapter(cricketAnalyser.getAdapterObject(CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS));
             cricketAnalyser.loadIPLCSVData(CricketAnalyser.PlayerType.IPL_BOWLER_WICKETS,IPL2019_WICKET_CSV_FILE_PATH);
-            String sortedResult = cricketAnalyser.sortByFields(SortByField.BEST_ECOMONY);
+            String sortedResult = cricketAnalyser.sortByFields(SortByField.BEST_ECOMONY_RATE);
             BowlerWicketCSV[] iplwicket = new Gson().fromJson(sortedResult, BowlerWicketCSV[].class);
             Assert.assertEquals("Shivam Dube", iplwicket[0].playerName);
         } catch (CricketAnalyserException e) {
