@@ -13,6 +13,9 @@ public class CricketAnalyser {
     Map<String, IPLDAO> allRounderMap = null;
 
     private IPLAdapter iplAdapter;
+    public void setIplAdapter(IPLAdapter iplAdapter){
+        this.iplAdapter=iplAdapter;
+    }
 
     public CricketAnalyser() {
 
@@ -39,16 +42,11 @@ public class CricketAnalyser {
         fieldComparatorMap.put(SortByField.BEST_BATTING_BOWLING_AVERAGE, new BestBattingAndBowling().reversed());
         fieldComparatorMap.put(SortByField.ALL_ROUNDER_PLAYER, new AllRounderPlayerComparator().reversed());
 
-
-
     }
-   /* public void setIplAdapter(IPLAdapter iplAdapter){
-        this.iplAdapter=iplAdapter;
-    }*/
 
     public int loadIPLCSVData(PlayerType playerType,String... csvFilePath) throws CricketAnalyserException {
-        IPLAdapter iplAdapter = IPLAdapterFactory.getIPLPlayer(playerType);
-        iplCsvMap = iplAdapter.loadIPLCSVData(playerType,csvFilePath);
+       // IPLAdapter iplAdapter = IPLAdapterFactory.getIPLPlayer(playerType);
+        this.iplCsvMap = this.iplAdapter.loadIPLCSVData(playerType,csvFilePath);
         return iplCsvMap.size();
     }
 

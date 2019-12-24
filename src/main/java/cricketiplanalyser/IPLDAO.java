@@ -17,7 +17,7 @@ public class IPLDAO {
     public int fourWicket;
     public int fiveWicket;
 
-    public IPLDAO() {
+    public IPLDAO(String abc, int i, double v) {
     }
 
     public IPLDAO(BatsManRunCSV batsManRunCSV) {
