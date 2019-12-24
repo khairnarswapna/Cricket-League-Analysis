@@ -45,7 +45,6 @@ public class CricketAnalyser {
     }
 
     public int loadIPLCSVData(PlayerType playerType,String... csvFilePath) throws CricketAnalyserException {
-       // IPLAdapter iplAdapter = IPLAdapterFactory.getIPLPlayer(playerType);
         this.iplCsvMap = this.iplAdapter.loadIPLCSVData(playerType,csvFilePath);
         return iplCsvMap.size();
     }
