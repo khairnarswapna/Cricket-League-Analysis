@@ -23,7 +23,7 @@ public class BatsManRunsAdapter extends IPLAdapter{
                 this.loadBowlerData(censusStateMap, csvFilePath[1]);
             return censusStateMap;
         } catch (ArrayIndexOutOfBoundsException e) {
-            throw new CricketAnalyserException(e.getMessage(), CricketAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+            throw new CricketAnalyserException(e.getMessage(), CricketAnalyserException.ExceptionType.IPL_CSVFILE_PROBLEM);
         }
 
     }
@@ -41,9 +41,9 @@ public class BatsManRunsAdapter extends IPLAdapter{
                     });
             return ipldaoMap.size();
         } catch (IOException | CSVBuilderException e) {
-            throw new CricketAnalyserException(e.getMessage(), CricketAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+            throw new CricketAnalyserException(e.getMessage(), CricketAnalyserException.ExceptionType.IPL_CSVFILE_PROBLEM);
         } catch (RuntimeException e) {
-            throw new CricketAnalyserException(e.getMessage(), CricketAnalyserException.ExceptionType.CENSUS_FILE_PROBLEM);
+            throw new CricketAnalyserException(e.getMessage(), CricketAnalyserException.ExceptionType.IPL_CSVFILE_PROBLEM);
         }
     }
 

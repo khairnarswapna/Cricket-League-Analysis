@@ -2,7 +2,7 @@ package cricketiplanalyser;
 
 public class CricketAnalyserException extends Exception {
     enum ExceptionType {
-        CENSUS_FILE_PROBLEM, FILE_NOT_FOUND, NO_IPL_DATA, SOME_FILE_ISSUE
+        CENSUS_FILE_PROBLEM, FILE_NOT_FOUND, NO_IPL_DATA, SOME_FILE_ISSUE,IPL_CSVFILE_PROBLEM
     }
     ExceptionType type;
     public CricketAnalyserException(String message, ExceptionType type) {
